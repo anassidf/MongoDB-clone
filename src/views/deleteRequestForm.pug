@@ -1,0 +1,8 @@
+extends ./layout.pug
+block content
+  form(method="post" action="/delete" class='form__container')
+    input(type="text" name='db', placeholder='Enter Database Name...' ,  required)
+    input(type="text" name='collection' ,placeholder='Enter Collection Name...', required)
+    input(type="text" name='id', placeholder='Enter document ID...')
+    input(type='submit' value="Delete" class='delete__button')
+  

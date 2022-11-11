@@ -1,0 +1,19 @@
+extends ./layout.pug
+
+block script 
+  script 
+    include ./addDocument.ts
+
+block content
+  form(method="post" action="/update" class='form__container')
+    input(type="text" name='db', placeholder='Enter Database Name...' ,  required)
+    input(type="text" name='collection' ,placeholder='Enter Collection Name...', required)
+    input(type="text" name='id', placeholder='Enter document ID...')
+    section 
+      input(type="text"  name='fieldName' placeholder='Enter Field Name')
+      input(type="text" name='fieldValue'  placeholder='Enter Value')
+     
+      button(onclick='addDocument()', class='add__document') Add Document  
+     
+    input(type='submit' ,value="Update Document" ,class='update__button', id='add__documentButton')
+  

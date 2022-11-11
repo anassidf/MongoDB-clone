@@ -1,0 +1,22 @@
+extends ../layout.pug
+block script 
+  script 
+    include ../addDocument.ts
+
+block content
+
+  form(method="post" , action="/" ,class='form__container' , id='form__container')
+    input(type="text", name='databaseName', placeholder='Enter Database Name...', required)
+    input(type="text", name='collectionName' ,placeholder='Enter Collection Name...', required)
+    
+   
+    section(class='document__field', id='document__section') 
+      input(type="text"  name='fieldName' placeholder='Enter Field Name' required)
+      input(type="text" name='fieldValue'  placeholder='Enter Value' required)
+     
+    
+      
+      button(onclick='addDocument()', class='add__document') Add Document
+
+    input(type='submit' ,value="Create", class='create__button', id='add__documentButton')
+  
